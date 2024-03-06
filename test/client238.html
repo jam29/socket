@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World with Socket.io</title>
+  </head>
+  <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js" integrity="sha512-/xb5+PNOA079FJkngKI2jvID5lyiqdHXaUUcfmzE0X0BdpkgzIWHC59LOG90a2jDcOyRsd1luOr24UCCAG8NNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+  var socket = io("http://localhost:3030");
+
+	let room="room238";
+
+	socket.on('connect', function() {
+      console.log("Connection established") 
+   		socket.emit('room', room);
+	});
+
+  </script>
+  </body>
+  </html>
